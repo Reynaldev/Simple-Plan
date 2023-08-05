@@ -6,14 +6,24 @@
     android:layout_height="match_parent"
     tools:context=".views.AddPlanActivity">
 
+    <ImageButton
+        android:id="@+id/btnAddBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="18dp"
+        android:src="@drawable/ic_arrow_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="18dp"
+        android:layout_marginTop="54dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" >
+        app:layout_constraintTop_toBottomOf="@id/btnAddBack" >
 
         <TextView
             android:layout_width="match_parent"
@@ -42,11 +52,11 @@
     </LinearLayout>
 
     <Button
+        android:id="@+id/btnAddSubmit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="18dp"
         android:text="Add plan"
-        android:onClick="addPlan"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent" />
