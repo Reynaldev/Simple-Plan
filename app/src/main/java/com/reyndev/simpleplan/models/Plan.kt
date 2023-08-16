@@ -1,8 +1,9 @@
 package com.reyndev.simpleplan.models
 
 data class Plan(
-    val id: Int,
-    var name: String,
+    var title: String,
     var desc: String,
     var isDone: Boolean
-)
+) {
+    var id: Int = 0
+}

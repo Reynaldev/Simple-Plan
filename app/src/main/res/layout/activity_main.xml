@@ -7,7 +7,7 @@
     tools:context=".views.MainActivity">
 
     <LinearLayout
-        android:id="@+id/layoutMainHeader"
+        android:id="@+id/main_header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -23,7 +23,7 @@
             android:text="Hello, Rey." />
 
         <TextView
-            android:id="@+id/tvMainStatus"
+            android:id="@+id/plan_status"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -31,18 +31,28 @@
 
     </LinearLayout>
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/main_header"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabMainEdit"
+        android:id="@+id/fab_edit_plan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="18dp"
         android:src="@drawable/ic_edit"
         android:contentDescription="Edit a plan"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/fabMainAdd" />
+        app:layout_constraintBottom_toTopOf="@id/fab_add_plan" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabMainAdd"
+        android:id="@+id/fab_add_plan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="18dp"

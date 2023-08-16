@@ -7,6 +7,8 @@ import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.Toast
 import com.reyndev.simpleplan.R
+import com.reyndev.simpleplan.data.DataSource
+import com.reyndev.simpleplan.models.Plan
 
 class AddPlanActivity : AppCompatActivity() {
     private lateinit var btnBack: ImageButton
@@ -18,21 +20,23 @@ class AddPlanActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_plan)
 
-        edtTitle = findViewById(R.id.edtAddTitle)
-        edtDesc = findViewById(R.id.edtAddDesc)
+        edtTitle = findViewById(R.id.edt_add_title)
+        edtDesc = findViewById(R.id.edt_add_desc)
 
-        btnBack = findViewById(R.id.btnAddBack)
+        btnBack = findViewById(R.id.btn_add_back)
         btnBack.setOnClickListener {
             finish()
         }
 
-        btnAddPlan = findViewById(R.id.btnAddSubmit)
+        btnAddPlan = findViewById(R.id.btn_add_submit)
         btnAddPlan.setOnClickListener {
-            Toast.makeText(
-                this,
-                "Name: ${edtTitle.text} | Desc: ${edtDesc.text}",
-                Toast.LENGTH_SHORT
-            ).show()
+            val plan = Plan(
+                edtTitle.text.toString(),
+                edtDesc.text.toString(),
+                false
+            )
+
+            DataSource.addPlan(plan)
 
             finish()
         }
