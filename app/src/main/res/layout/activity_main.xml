@@ -14,16 +14,17 @@
         android:orientation="vertical"
         android:padding="18dp"
         android:background="@drawable/bg_round"
-        android:backgroundTint="@color/white300"
+        android:backgroundTint="@color/primary_light"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" >
 
         <TextView
+            android:id="@+id/plan_greet"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="Hello, Rey." />
+            android:text="@string/greet_morning" />
 
         <TextView
             android:id="@+id/plan_status"
@@ -50,6 +51,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="18dp"
+        android:backgroundTint="@color/primary_light"
         android:src="@drawable/ic_add"
         android:contentDescription="Adding a new plan"
         app:layout_constraintEnd_toEndOf="parent"

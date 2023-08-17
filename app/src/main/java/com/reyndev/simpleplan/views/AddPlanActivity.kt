@@ -28,10 +28,13 @@ class AddPlanActivity : AppCompatActivity() {
 
         btnAddPlan = findViewById(R.id.btn_add_submit)
         btnAddPlan.setOnClickListener {
-            val plan = Plan(
-                edtDesc.text.toString(),
-                false
-            )
+            if (edtDesc.text.isBlank())
+            {
+                edtDesc.error = "You should have a plan here"
+                return@setOnClickListener
+            }
+
+            val plan = Plan(edtDesc.text.toString(), false)
 
             DataSource.addPlan(plan)
 

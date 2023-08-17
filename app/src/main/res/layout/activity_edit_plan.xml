@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.AddPlanActivity">
+    tools:context=".views.EditPlanActivity">
 
     <ImageButton
         android:id="@+id/btn_add_back"
@@ -28,26 +28,38 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btn_add_back"
-        app:layout_constraintBottom_toTopOf="@id/btn_add_submit" >
+        app:layout_constraintBottom_toTopOf="@id/btn_edit_submit" >
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edt_add_desc"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="start"
             android:inputType="textMultiLine"
-            android:scrollbars="vertical" />
+            android:scrollbars="vertical"
+            android:gravity="start"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/btn_add_submit"
+        android:id="@+id/btn_edit_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="18dp"
+        android:backgroundTint="@color/red_900"
+        android:textColor="@color/white"
+        android:text="Delete"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btn_edit_submit"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <Button
+        android:id="@+id/btn_edit_submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="18dp"
         android:backgroundTint="@color/primary_light"
-        android:text="Add plan"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="Edit"
+        app:layout_constraintStart_toEndOf="@id/btn_edit_delete"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent" />
 
