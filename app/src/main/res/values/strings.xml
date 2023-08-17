@@ -2,5 +2,6 @@
     <string name="app_name">Simple Plan</string>
 
     <string name="greet_morning">Good morning</string>
+    <string name="greet_afternoon">Good afternoon</string>
     <string name="greet_evening">Good evening</string>
 </resources>

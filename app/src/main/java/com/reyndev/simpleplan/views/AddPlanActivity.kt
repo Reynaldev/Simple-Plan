@@ -19,14 +19,15 @@ class AddPlanActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_plan)
 
+        // Views
         edtDesc = findViewById(R.id.edt_add_desc)
-
         btnBack = findViewById(R.id.btn_add_back)
+        btnAddPlan = findViewById(R.id.btn_add_submit)
+
+        // OnClickListener
         btnBack.setOnClickListener {
             finish()
         }
-
-        btnAddPlan = findViewById(R.id.btn_add_submit)
         btnAddPlan.setOnClickListener {
             if (edtDesc.text.isBlank())
             {

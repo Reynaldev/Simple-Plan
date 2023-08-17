@@ -17,6 +17,16 @@ class DataSource {
             plans.add(plan)
         }
 
+        // Delete a plan
+        fun deletePlan(id: Int) {
+            plans.removeAt(id)
+        }
+
+        // Edit a plan
+        fun editPlan(pos: Int, plan: Plan) {
+            plans[pos] = plan
+        }
+
         // Get a plan element at index
         fun getPlan(index: Int): Plan = plans[index]
 

@@ -3,8 +3,6 @@ package com.reyndev.simpleplan.views
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.view.View
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -14,7 +12,6 @@ import com.reyndev.simpleplan.data.DataSource
 import java.util.Calendar
 import java.util.Date
 import java.util.GregorianCalendar
-import kotlin.time.Duration
 
 class MainActivity : AppCompatActivity() {
     private lateinit var fabAdd: FloatingActionButton
@@ -41,8 +38,6 @@ class MainActivity : AppCompatActivity() {
         // Floating Action Button "Add"
         fabAdd = findViewById(R.id.fab_add_plan)
         fabAdd.setOnClickListener {
-            isResumed = false
-
             startActivity(Intent(this, AddPlanActivity::class.java))
         }
 
@@ -59,6 +54,12 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    override fun onPause() {
+        super.onPause()
+
+        isResumed = false
+    }
+
     private fun updateActivity() {
         // Recycler view
         recyclerView.adapter = PlanAdapter(this)
@@ -67,8 +68,10 @@ class MainActivity : AppCompatActivity() {
         val calendar = GregorianCalendar().also { it.time = Date() }
         val currentTime = calendar.get(Calendar.HOUR_OF_DAY)
 
-        if (currentTime in 4..14)
+        if (currentTime in 4..12)
             tvGreet.text = resources.getString(R.string.greet_morning)
+        else if(currentTime in 13..18)
+            tvGreet.text = resources.getString(R.string.greet_afternoon)
         else
             tvGreet.text = resources.getString(R.string.greet_evening)
 
