@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.reyndev.simpleplan.R
 import com.reyndev.simpleplan.data.DataSource
@@ -14,6 +15,13 @@ class PlanAdapter(private val context: Context) : RecyclerView.Adapter<PlanAdapt
 
     class PlanViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
         val planDesc: TextView = view.findViewById(R.id.plan_desc)
+
+        init {
+            view.setOnClickListener {
+                // Intent to EditPlanActivity
+
+            }
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlanViewHolder {
