@@ -15,41 +15,27 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+        android:id="@+id/add_desc"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="18dp"
-        android:layout_marginTop="54dp"
+        android:layout_height="0dp"
+        android:layout_margin="18dp"
+        android:hint="Plan description"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_add_back" >
+        app:layout_constraintTop_toBottomOf="@id/btn_add_back"
+        app:layout_constraintBottom_toTopOf="@id/btn_add_submit" >
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Title" />
-
-        <EditText
-            android:id="@+id/edt_add_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="text"
-            android:hint="Mom's Birthday" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Description" />
-
-        <EditText
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edt_add_desc"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="text"
-            android:hint="Buy a cake for mom" />
+            android:layout_height="match_parent"
+            android:inputType="textMultiLine"
+            android:scrollbars="vertical"
+            android:gravity="start"/>
 
-    </LinearLayout>
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/btn_add_submit"

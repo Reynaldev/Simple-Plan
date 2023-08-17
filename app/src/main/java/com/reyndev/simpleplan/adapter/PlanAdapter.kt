@@ -13,7 +13,6 @@ import com.reyndev.simpleplan.models.Plan
 class PlanAdapter(private val context: Context) : RecyclerView.Adapter<PlanAdapter.PlanViewHolder>() {
 
     class PlanViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
-        val planItem: TextView = view.findViewById(R.id.plan_title)
         val planDesc: TextView = view.findViewById(R.id.plan_desc)
     }
 
@@ -29,7 +28,6 @@ class PlanAdapter(private val context: Context) : RecyclerView.Adapter<PlanAdapt
     override fun onBindViewHolder(holder: PlanViewHolder, position: Int) {
         val item = DataSource.getPlan(position)
 
-        holder.planItem.text = item.title
         holder.planDesc.text = item.desc
     }
 }

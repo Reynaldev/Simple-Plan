@@ -1,7 +1,6 @@
 package com.reyndev.simpleplan.models
 
 data class Plan(
-    var title: String,
     var desc: String,
     var isDone: Boolean
 ) {
